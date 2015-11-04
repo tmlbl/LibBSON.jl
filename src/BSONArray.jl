@@ -97,7 +97,7 @@ function append(bsonArray::BSONArray, val::Union{Date,DateTime})
         bsonArray._wrap_,
         keyCStr,
         length(keyCStr),
-        ts
+        ts * 1000
         ) || error("libBSON: overflow")
 end
 function append(bsonArray::BSONArray, val::BSONArray)

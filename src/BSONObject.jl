@@ -113,7 +113,7 @@ function append(bsonObject::BSONObject, key::AbstractString, val::Union{Date,Dat
         bsonObject._wrap_,
         keyCStr,
         length(keyCStr),
-        ts
+        ts * 1000
         ) || error("libBSON: overflow")
 end
 function append(bsonObject::BSONObject, key::AbstractString, val::BSONObject)
